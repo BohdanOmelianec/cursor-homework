@@ -19,7 +19,7 @@ document.querySelector('.price-counter').innerHTML =
     <li>Найменше число: ${minimum}</li>
     <li>Сума всіх товарів: ${summOfProducts}</li>
     <li>Сума всіх товарів округлена: ${summOfProductsFloor}</li>
-    <li>Сума округлена до сотень: ${(Math.ceil(summOfProductsFloor / 100)) * 100}</li>
+    <li>Сума округлена до сотень: ${(Math.round(summOfProductsFloor / 100)) * 100}</li>
     <li>Чи парне число: ${summOfProductsFloor % 2 == 0}</li>
     <li>Решта з 500 грн складає: ${(500 - summOfProducts).toFixed(2)}</li>
     <li>Середнє значення цін: ${((BREAD + CHEESE + MILK) / 3).toFixed(2)}</li>
