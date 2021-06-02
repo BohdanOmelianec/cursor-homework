@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(to right, #3255a0, #14db57);
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 20px;
+}
+
+.price-counter {
+    position:relative;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 20px #363636;
+    color: rgb(211, 210, 210);
+    transition: transform .7s, box-shadow .7s;
+    animation: appear 2s ease-in 1;
+    z-index: 1;
+}
+
+.price-counter:hover {
+    transform: scale(1.02);
+    box-shadow: 10px 10px 25px #363636;
+
+}
+
+@keyframes appear {
+    from {
+        opacity: 0.7;
+        height: 10px;
+        overflow: hidden;
+
+    }
+
+    to {
+        opacity: 1;
+        height: 500px;
+        overflow: hidden;
+
+
+    }
+}
+
+li {
+    list-style: none;
+    margin: 10px;
+    line-height: 1.5em;
+    text-shadow: 2px 2px 15px #333333;
+}
+
+b {
+    color: rgb(255 79 0);
+}
+
+img {
+    position: absolute;
+    top: 150px;
+    left: 30px;
+}
+
+.date {
+    margin-top: 5px;
+    margin-left: 280px;
+}
+
+hr {
+    width: 90%;
+    height: 2px;
+    margin: 0 auto;
+    background-color: rgb(255 79 0);
+    border: none;
+}
