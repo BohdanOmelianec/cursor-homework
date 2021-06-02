@@ -14,7 +14,7 @@ body {
 .price-counter {
     position:relative;
     width: 500px;
-    height: 500px;
+    /* height: 100%; */
     text-align: center;
     margin: 30px auto;
     padding: 10px;
@@ -22,8 +22,12 @@ body {
     box-shadow: 5px 5px 20px #363636;
     color: rgb(211, 210, 210);
     transition: transform .7s, box-shadow .7s;
-    animation: appear 2s ease-in 1;
+    /* animation: appear 2s ease-in 1; */
     z-index: 1;
+}
+.wrapper {
+    /* height: max-content; */
+    animation: appear 2s ease-in 1; 
 }
 
 .price-counter:hover {
@@ -35,14 +39,14 @@ body {
 @keyframes appear {
     from {
         opacity: 0.7;
-        height: 10px;
+        height: 0;
         overflow: hidden;
 
     }
 
     to {
         opacity: 1;
-        height: 500px;
+        height: 100%;
         overflow: hidden;
 
 
