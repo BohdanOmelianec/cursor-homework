@@ -117,10 +117,13 @@ h1 {
     .header-card {
         grid-column-start: 1;
         grid-column-end: 2;
+        background-size: auto 30%;
+
     }
 
     .container {
         width: 99%;
         grid-template-columns: 1fr;
+        font-size: 15px;
     }
 }

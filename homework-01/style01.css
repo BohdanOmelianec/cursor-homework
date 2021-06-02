@@ -68,7 +68,7 @@ img {
 
 .date {
     margin-top: 5px;
-    margin-left: 280px;
+    margin-left: 55%;
 }
 
 hr {
@@ -77,4 +77,14 @@ hr {
     margin: 0 auto;
     background-color: rgb(255 79 0);
     border: none;
+}
+
+@media (max-width: 780px) {
+    .price-counter {
+        width: 90%;
+    }
+    img {
+        opacity: .5;
+    }
+    
 }
