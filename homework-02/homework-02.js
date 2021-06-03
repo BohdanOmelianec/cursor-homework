@@ -6,25 +6,29 @@ let summOfNumbers = 0;
 function numberCounter() {
     // Просимо ввести число до тих пір поки користувач введе нормальне число.
     do {
-        firstNumber = parseInt(+prompt('Enter first number:', ''));
-        secondNumber = parseInt(+prompt('Enter second number:', ''));
-        skipEven = confirm('Do you want to skip even numbers?');
+        firstNumber = +prompt('Enter first number:', '0');
+        secondNumber = +prompt('Enter second number:', '0');
     } while ((isNaN(firstNumber) || isNaN(secondNumber)) ||
-        (firstNumber === 0 || secondNumber === 0));
+            (firstNumber !== parseInt(firstNumber) || secondNumber !== parseInt(secondNumber)));
 
+    skipEven = confirm('Do you want to skip even numbers?');
+    // Визначаємо менше і більше число.
+    let minNumber = Math.min(firstNumber, secondNumber);
+    let maxNumber = Math.max(firstNumber, secondNumber);
+    
     // Перебираємо всі числа у відповідному діапазоні і перевіряємо на парність.
-    for (firstNumber; firstNumber <= secondNumber; firstNumber++) {
+    for (minNumber; minNumber <= maxNumber; minNumber++) {
         if (skipEven) {
-            if (firstNumber % 2 === 0) {
+            if (minNumber % 2 === 0) {
                 continue;
             }
-            summOfNumbers += firstNumber;
+            summOfNumbers += minNumber;
         } else {
-            summOfNumbers += firstNumber;
+            summOfNumbers += minNumber;
         }
     }
     document.querySelector('.number-container').innerHTML = summOfNumbers;
 
 }
 // Встановив setTimeout щоб загрузились стилі а потім почали появлятись промпти.
-setTimeout(numberCounter, 300);
+setTimeout(numberCounter, 1000);
