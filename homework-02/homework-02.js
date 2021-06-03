@@ -1,34 +1,30 @@
-// const BREAD = 15.678,
-//       CHEESE = 123.965,
-//       MILK = 90.2345;
-// const CLIENT_MONEY = 500;
-// let date = new Date().toDateString();
+let firstNumber;
+let secondNumber;
+let skipEven;
+let summOfNumbers = 0;
 
-// //Basic
+function numberCounter() {
+    // Просимо ввести число до тих пір поки користувач введе нормальне число.
+    do {
+        firstNumber = parseInt(+prompt('Enter first number:', ''));
+        secondNumber = parseInt(+prompt('Enter second number:', ''));
+        skipEven = confirm('Do you want to skip even numbers?');
+    } while ((isNaN(firstNumber) || isNaN(secondNumber)) ||
+        (firstNumber === 0 || secondNumber === 0));
 
-// let maximum = Math.max(BREAD, CHEESE, MILK);
-// let minimum = Math.min(BREAD, CHEESE, MILK);
-// let summOfProducts = BREAD + CHEESE + MILK;
-// let summOfProductsFloor = Math.floor(BREAD) + Math.floor(CHEESE) + Math.floor(MILK);
-// let discount = Math.random();
-// let priceWithDiscount = summOfProducts - (summOfProducts * discount);
-// let profit = priceWithDiscount - (summOfProducts / 2);
+    // Перебираємо всі числа у відповідному діапазоні і перевіряємо на парність.
+    for (firstNumber; firstNumber <= secondNumber; firstNumber++) {
+        if (skipEven) {
+            if (firstNumber % 2 === 0) {
+                continue;
+            }
+            summOfNumbers += firstNumber;
+        } else {
+            summOfNumbers += firstNumber;
+        }
+    }
+    document.querySelector('.number-container').innerHTML = summOfNumbers;
 
-// //Advanced
-
-// document.querySelector('.price-counter').innerHTML = 
-// (`<ol>
-//     <li>Найбільше число: <b>${maximum}</b> грн</li>
-//     <li>Найменше число: <b>${minimum}</b> грн</li>
-//     <li>Сума всіх товарів: <b>${summOfProducts}</b> грн</li>
-//     <li>Сума всіх товарів округлена: <b>${summOfProductsFloor}</b> грн</li>
-//     <li>Сума округлена до сотень: <b>${(Math.round(summOfProductsFloor / 100)) * 100}</b> грн</li>
-//     <li>Чи парне число: <b>${summOfProductsFloor % 2 == 0}</b></li>
-//     <li>Решта з 500 грн складає: <b>${(CLIENT_MONEY - summOfProducts).toFixed(2)}</b> грн</li>
-//     <li>Середнє значення цін: <b>${((BREAD + CHEESE + MILK) / 3).toFixed(2)}</b> грн</li>
-//     <li>Ваша знижка складає: <b>${(discount * 100).toFixed(0)}%</b></li>
-//     <li>Cума зі знижкою: <b>${priceWithDiscount.toFixed(2)}</b> грн</li>
-//     <li>Чистий прибуток складає: <b>${profit.toFixed(2)}</b> грн</li>
-//     </ol>
-//     <hr>
-//     <div class="date">${date}</div>`);
+}
+// Встановив setTimeout щоб загрузились стилі а потім почали появлятись промпти.
+setTimeout(numberCounter, 300);

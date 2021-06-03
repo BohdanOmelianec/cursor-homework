@@ -5,87 +5,46 @@
 }
 
 body {
-    height: 100vh;
+    height: 100%;
     background: linear-gradient(to right, #3255a0, #14db57);
     font-family: 'Archivo Black', sans-serif;
     font-size: 20px;
 }
 
-/* .price-counter {
-    position:relative;
-    width: 500px;
+.number-counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/calendar-logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
     text-align: center;
-    margin: 30px auto;
+    margin: 200px auto;
     padding: 10px;
-    border-radius: 15px;
+    border-radius: 50%;
     box-shadow: 5px 5px 20px #363636;
-    color: rgb(211, 210, 210);
+    color: rgb(186 164 164);
     transition: transform .7s, box-shadow .7s;
     z-index: 1;
 }
-.wrapper {
-    animation: appear 2s ease-in 1; 
-}
 
-.price-counter:hover {
+.number-counter:hover {
     transform: scale(1.02);
     box-shadow: 10px 10px 25px #363636;
-
 }
 
-@keyframes appear {
-    from {
-        opacity: 0.7;
-        height: 0;
-        overflow: hidden;
-
-    }
-
-    to {
-        opacity: 1;
-        height: 100%;
-        overflow: hidden;
-
-
-    }
+.number-container {
+    padding-top: 15px;
+    font-size: 44px;
+    font-weight: bold;
+    color: #287db2;
 }
-
-li {
-    list-style: none;
-    margin: 10px;
-    line-height: 1.5em;
-    text-shadow: 2px 2px 15px #333333;
-}
-
-b {
-    color: rgb(255 79 0);
-} */
 
 img {
     position: absolute;
     top: 150px;
     left: 30px;
-}
-
-/* .date {
-    margin-top: 5px;
-    margin-left: 55%;
-}
-
-hr {
-    width: 90%;
-    height: 2px;
-    margin: 0 auto;
-    background-color: rgb(255 79 0);
-    border: none;
-} */
-
-@media (max-width: 780px) {
-    .price-counter {
-        width: 90%;
-    }
-    /* img {
-        opacity: .5;
-    } */
-    
 }
