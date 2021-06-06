@@ -12,6 +12,7 @@ body {
 }
 
 .number-counter {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +29,7 @@ body {
     box-shadow: 5px 5px 20px #363636;
     color: rgb(186 164 164);
     transition: transform .7s, box-shadow .7s;
-    z-index: 1;
+    z-index: 2;
 }
 
 .number-counter:hover {
@@ -47,4 +48,11 @@ img {
     position: absolute;
     top: 150px;
     left: 30px;
+}
+
+@media (max-width: 780px) {
+    img {
+        opacity: .5;
+    }
+    
 }
