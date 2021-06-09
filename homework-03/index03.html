@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework 2</title>
+    <title>Homework 3</title>
     <link rel="stylesheet" href="./style03.css">
 </head>
 <!-- GIT cheat sheet
@@ -50,13 +51,177 @@
         с остальным кодом. Ветка является частью репозитория.
 
  -->
+
 <body>
 
     <div class="wrapper">
-        <div class="price-counter"></div>
+        <div class="function-block">
+            <div class="function-form">
+                <form action=#>
+                    <label for="maxNumber">Enter a number:</label><br>
+                    <input  id="maxNumber" type="number" autocomplete="off"><br>
+                    <i>Maximum number is: <span class="res1"></span></i>
+                </form>
+            </div>
+            <p class="function-description">
+                Створити функцію getMaxDigit(number) – яка отримує будь-яке число та виводить найбільшу цифру в цьому
+                числі.
+            </p>
+        </div>
+
+        <div class="function-block">
+            <div class="function-form">
+                <form action=#>
+                    <label for="numForPow">Enter a number:</label>
+                    <input class="test2" id="numForPow" type="number" autocomplete="off"><br>
+                    <label for="power">Enter a power:</label>
+                    <input class="test2" id="power" type="number" autocomplete="off"><br>
+                    <i>Number in power: <span class="res2"></span></i>
+                </form>
+            </div>
+            <p class="function-description">
+                Створити функцію, яка визначає ступінь числа. Не використовуючи Math.pow та **.
+            </p>
+        </div>
+
+        <div class="function-block">
+            <div class="function-form">
+                <form action=#>
+                    <label for="strForUpper">Enter a string:</label><br>
+                    <input id="strForUpper" type="text" value='' autocomplete="off"><br>
+                    <i>First letter is upperCase: <span class="res3"></span></i>
+                </form>
+            </div>
+            <p class="function-description">
+                Створити функцію, яка форматує ім'я, роблячи першу букву великою.
+            </p>
+        </div>
+
+        <div class="function-block">
+            <div class="function-form">
+                <form action=#>
+                    <label for="salary">Enter full salary:</label><br>
+                    <input id="salary" type="text" value='' autocomplete="off"><br>
+                    <i>Salary witout tax is: <span class="res4">0</span> UAH</i>
+                </form>
+            </div>
+            <p class="function-description">
+                Створити функцію, яка вираховує суму, що залишається після оплати податку від зарабітньої плати.
+                (Податок = 18% + 1.5% -> 19.5%).
+            </p>
+        </div>
+
+        <div class="function-block">
+            <div class="function-form">
+                <form action=#>
+                    <label for="rundomNumber">Enter first number:</label>
+                    <input id="rundomNumber" type="number" value='' autocomplete="off"><br>
+                    <label for="rundomNumber2">Enter second number:</label>
+                    <input id="rundomNumber2" type="number" value='' autocomplete="off"><br>
+                    <input class="btn rumNum" type="submit" value="Generate">
+                    <i>Random number is: <span class="res5"></span></i>
+                </form>
+            </div>
+            <p class="function-description">
+                Створити функцію, яка повертає випадкове ціле число в діапазоні від N до M.
+            </p>
+        </div>
+
+        <div class="function-block">
+            <div class="function-form">
+                <form action=#>
+                    <label for="letter">Enter letter:</label>
+                    <input id="letter" type="text" value='' autocomplete="off"><br>
+                    <label for="string">Enter string:</label>
+                    <input id="string" type="text" value='' autocomplete="off"><br>
+                    <i>Character appears <span class="res6">0</span> times.</i>
+                </form>
+            </div>
+            <p class="function-description">
+                Створити функцію, яка рахує скільки разів певна буква повторюється в слові.
+            </p>
+        </div>
+
+        <div class="function-block">
+            <div class="function-form">
+                <form action=#>
+                    <label for="currency">Enter currency:</label>
+                    <input id="currency" type="number" value='' autocomplete="off">
+
+                    <div>
+                        <label for="uah">UAH</label>
+                        <input type="radio" name="cur" id="uah" value="uah" checked>
+                        <label for="dollar">$</label>
+                        <input type="radio" name="cur" id="dollar" value="dollar">
+                    </div>
+                    <i>Result: <span class="res7"></span></i>
+                </form>
+            </div>
+            <p class="function-description">
+                Створіть функцію, яка конвертує долари в гривні та навпаки в залежності від наявності символа $ або UAH
+                в рядку.
+            </p>
+        </div>
+
+        <div class="function-block">
+            <div class="function-form">
+                <form action=#>
+                    <label for="quantityNum">Enter quantity of number:</label>
+                    <input id="quantityNum" type="number" value='' autocomplete="off"><br>
+                    <input class="btn pass" type="submit" value="Generate">
+                    <i>Password is: <span class="res8"></span></i>
+                </form>
+            </div>
+            <p class="function-description">
+                Створіть функцію генерації випадкового паролю (тільки числа), довжина встановлюється користувачем або по
+                замовчуванню = 8 символам.
+            </p>
+        </div>
+
+        <div class="function-block">
+            <div class="function-form">
+                <form action=#>
+                    <label for="letter2">Enter letter:</label>
+                    <input id="letter2" type="text" value='' autocomplete="off"><br>
+                    <label for="string2">Enter string:</label>
+                    <input id="string2" type="text" value='' autocomplete="off"><br>
+                    <i>String without character: <span class="res9"></span></i>
+                </form>
+            </div>
+            <p class="function-description">
+                Створіть функцію, яка видаляє всі вказані букви з речення.
+            </p>
+        </div>
+
+        <div class="function-block">
+            <div class="function-form">
+                <form action=#>
+                    <label for="palyn">Enter palyndrom:</label>
+                    <input id="palyn" type="text" value='' autocomplete="off"><br>
+                    <i>Is the string palyndrom? <span class="res10"></span></i>
+                </form>
+            </div>
+            <p class="function-description">
+                Створіть функцію, яка перевіряє, чи є слово паліндромом.
+            </p>
+        </div>
+
+        <div class="function-block">
+            <div class="function-form">
+                <form action=#>
+                    <label for="string3">Enter string:</label>
+                    <input id="string3" type="text" value='' autocomplete="off"><br>
+                    <i>String without dublicated letters: <span class="res11"></span></i>
+                </form>
+            </div>
+            <p class="function-description">
+                Створіть функцію, яка видалить з речення букви, які зустрічаються більше 1 разу.
+            </p>
+        </div>
     </div>
 
-<img src="../img/logo.webp" alt="">
+    <img src="../img/logo.webp" alt="">
     <script src="./homework-03.js"></script>
 </body>
+
 </html>
