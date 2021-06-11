@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(to right, #3255a0, #14db57);
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 20px;
+}
+
+img {
+    position: fixed;
+    top: 150px;
+    left: 30px;
+    opacity: .5;
+}
