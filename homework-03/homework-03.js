@@ -1,64 +1,85 @@
 // Function 1
 function getMaxDigit(num) {
     return (isNaN(num) || num == '') ?
-        '' : Math.max(...num.split('').filter((item) => !isNaN(item)));
+        '' : Math.max(...num.split('').filter( (item) => !isNaN(item) ) );
 }
-console.log(getMaxDigit('trn754gf'));
+console.log('getMaxDigit() - ', getMaxDigit('5459254'));
 
 // Function 2
 function numberInPower(num, pow) {
-    [num, pow] = [Math.floor(num), Math.abs(Math.floor(pow))];
-    return pow === 1 ? num : num * numberInPower(num, pow - 1);
+    // [num, pow] = [ Math.floor(num), Math.abs(Math.floor(pow) ) ];
+    // return pow === 1 ? num : num * numberInPower(num, pow - 1);
+    let summ = 1;
+    if(pow === 0) {
+        return 1;
+    } else if(pow < 0) {
+        for(let i = 0; i > pow; i--) {
+            summ *= num;
+            console.log(summ);
+        }
+        return 1 / summ;
+    } else {
+        for(let i = 0; i < pow; i++) {
+            summ *= num;
+        }
+        return summ;
+    }
 }
-console.log(numberInPower(-2, -3));
+console.log('numberInPower() - ', numberInPower(0, 0));
 
 // Function 3
 function setFirstLetterUpper(str) {
     if (!str || typeof str === 'number') {
         return '';
     }
-    str = str.toLowerCase();
-    str = str[0].toUpperCase() + str.slice(1);
-    return str;
+    const strCopy = str.toLowerCase();
+    return strCopy[0].toUpperCase() + strCopy.slice(1);
 }
-console.log(setFirstLetterUpper('fhbih IUGY'));
+console.log('setFirstLetterUpper() - ', setFirstLetterUpper('volOdymyr'));
 
 // Function 4
 function getClearSalary(salary) {
-    if (isNaN(salary)) {
+    if ( isNaN(salary) ) {
         return "Invalid value.";
     }
+
     const tax = 19.5;
     const clearSalary = (salary - tax * salary / 100).toFixed(2);
     return clearSalary;
 }
-console.log(getClearSalary('53745'));
+console.log('getClearSalary() - ', getClearSalary('53745'));
 
 // Function 5
-function getRandomNumber(N, M) {
-    if (isNaN(N) || isNaN(M)) {
+function getRandomNumber(firstNum, secondNum) {
+    if ( isNaN(firstNum) || isNaN(secondNum) ) {
         return "Invalid value.";
     }
-    [N, M] = [Math.min(...arguments), Math.max(...arguments)];
-    return Math.floor(Math.random() * (M - N) + N);
+    [firstNum, secondNum] = [ Math.min(...arguments), Math.max(...arguments) ];
+    return Math.floor(Math.random() * (secondNum - firstNum) + firstNum);
 }
-console.log(getRandomNumber(7, 16));
+console.log('getRandomNumber() - ', getRandomNumber(77, -16));
 
 // Function 6
 function countLetter(char, string) {
-    return (!char || !string) ?
-     "Empty value." : string.match(new RegExp(char, 'gi')).length;
+    // return (!char || !string) ?
+    //  "Empty value." : string.match(new RegExp(char, 'gi')).length;
+    for (let i = 0; i < string.length; i++) {
+        if (!char || !string) {
+            return 'Empty value';
+        } 
+        return string.match(new RegExp(char, 'gi')).length;
+    }
 }
-console.log(countLetter(5, '648к676556'));
+console.log('countLetter() - ', countLetter('6', '648к556765656'));
 
 // Function 7
 function convertCurrency(currency) {
     const curr = document.querySelector("#uah");
     const exchangeRate = 27;
     return curr.checked ?
-     `${(+currency / exchangeRate).toFixed(2)} $` : `${(+currency * exchangeRate)} UAH`;
+     `${ (+currency / exchangeRate).toFixed(2) } $` : `${ (+currency * exchangeRate) } UAH`;
 }
-console.log(convertCurrency('16.477'));
+console.log('convertCurrency() - ', convertCurrency('16.477'));
 
 
 // Function 8
@@ -72,19 +93,19 @@ function getRandomPassword(quantity = 8) {
     }
     return password;
 }
-console.log(getRandomPassword(5));
+console.log('getRandomPassword() - ', getRandomPassword(5));
 
 // Function 9
 function deleteLetters(char, string) {
-    return (!char || !string) ? "Empty value." : string.replace(new RegExp(char, 'gi'), '');
+    return (!char || !string) ? "Empty value." : string.replaceAll(char, '');
 }
-console.log(deleteLetters('a', 'ababahalamaha'));
+console.log('deleteLetters() - ',  deleteLetters('a', 'ababahalamaha'));
 
 // Function 10
 function isPalyndrom(string) {
     return string === string.toString().split('').reverse().join('');
 }
-console.log(isPalyndrom(5564455));
+console.log('isPalyndrom() - ', isPalyndrom(5564455));
 
 // Function 11
 function deleteDuplicateLetter(string) {
@@ -97,22 +118,7 @@ function deleteDuplicateLetter(string) {
     }
     return newStr;
 }
-console.log(deleteDuplicateLetter("абабахаламага"));
-
-
-// document.querySelector('.function-form').innerHTML = 
-// `${getMaxDigit('68578')}<br>
-//  ${numberInPower(-2, -3)}<br>
-//  ${setFirstLetterUpper('stEvEn')}<br>
-//  ${getClearSalary('53745')}<br>
-//  ${getRandomNumber(7, 16)}<br>
-//  ${countLetter(5, '648к676556')}<br>
-//  ${convertCurrency('16.477 uah')}<br>
-//  ${getRandomPassword(5)}<br>
-//  ${deleteLetters('a', 'ababahalamaha')}<br>
-//  ${isPalyndrom(5564455)}<br>
-//  ${deleteDuplicateLetter("абабахаламага")}<br>
-//  `;
+console.log('deleteDuplicateLetter() - ', deleteDuplicateLetter("абабахаламага"));
 
 
 // Код для стилізації та роботи сторінки.
@@ -234,12 +240,3 @@ document.addEventListener('scroll', () => {
         }
     });
 });
-
-
-
-// let c = 4;
-// const addX = (x=1) => n => n + x;
-// // const addThree = addX(3);
-// let d = addX()(c);
-// console.log('example partial application', d);
-
