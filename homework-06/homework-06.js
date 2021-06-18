@@ -46,7 +46,7 @@ function getSubjects(student) {
         return 'No matches';
     }
 }
-console.log( getSubjects(students[0]) );
+console.log('Список всіх предметів: ', getSubjects(students[0]) );
 
 
 // Function 2
@@ -60,7 +60,7 @@ function getAverageMark({subjects}) {
     return getAverage(...marks).toFixed(2);
 }
 
-console.log( getAverageMark(students[0]) );
+console.log('Середня оцінка студента: ', getAverageMark(students[0]) );
 
 
 // Function 3
@@ -72,7 +72,7 @@ function getStudentInfo(student) {
 
     return studentInfo;
 }    
-console.log( getStudentInfo(students[0]) );
+console.log('Інформація про студента: ', getStudentInfo(students[0]) );
 
 
 // Function 4
@@ -85,7 +85,7 @@ function getStudentsNames(students) {
 
     return studentNames.sort();
 }
-console.log( getStudentsNames(students) );
+console.log('Список всіх студентів: ', getStudentsNames(students) );
 
 
 // Function 5
@@ -102,7 +102,7 @@ function getBestStudent(students) {
 
     return bestStudent;
 }
-console.log('The best student is: ', getBestStudent(students) );
+console.log('Найкращий студент: ', getBestStudent(students) );
 
 
 // Function 6
@@ -121,7 +121,7 @@ function calculateWordLetters(str) {
 
     return strangeObject;
 }
-console.log( calculateWordLetters('test') );
+console.log('Об\'єкт з букв переданого слова: ', calculateWordLetters('test') );
 
 
 
