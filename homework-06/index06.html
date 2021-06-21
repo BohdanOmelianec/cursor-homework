@@ -7,11 +7,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homework 6</title>
     <link rel="stylesheet" href="./style06.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 </head>
+
 <body>
-    <img src="../img/logo.webp" alt="">
+    <div class="container">
+        <div class="tab">
+            <button class="tablinks">getSubjects(student)</button>
+            <button class="tablinks">getAverageMark(student)</button>
+            <button class="tablinks">getStudentInfo(student)</button>
+            <button class="tablinks">getStudentsNames(students)</button>
+            <button class="tablinks">getBestStudent(students)</button>
+            <button class="tablinks">calculateWordLetters(string)</button>
+        </div>
+
+        <div class="tabcontent">
+            <p>Створіть функцію getSubjects(students[0] --> ["Math", "Algorithms", "Data science"] - яка повертає список
+                предметів для конкретного студента. Зверніть увагу – назву предмету необхідно повертати з великої
+                літери, а _ – замінити на пробіл.
+            </p>
+            <div class="form-group">
+                <label for="sel1">Select student:</label>
+                <select id='form-control' class="form-control" id="sel1">
+                    <option value="" selected>Select...</option>
+                    <option value="0">Tanya</option>
+                    <option value="1">Victor</option>
+                    <option value="2">Anton</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="tabcontent">
+            <p>Створіть функцію getAverageMark(students[0]) --> 3.79 – яка поверне середню оцінку по усім предметам для
+                переданого студента НЕ МАСИВА СТУДЕНТІВ. Оцінку округліть до 2ого знаку.
+            </p>
+            <div class="form-group">
+                <label for="sel1">Select student:</label>
+                <select class="form-control" id="sel1">
+                    <option value="" selected>Select...</option>
+                    <option value="0">Tanya</option>
+                    <option value="1">Victor</option>
+                    <option value="2">Anton</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="tabcontent">
+            <p>Створіть функцію getStudentInfo(students[0]) --> { "course": 3, "name": "Tanya", "averageMark": 3.79} –
+                яка повертає інформацію загального виду по переданому студенту (вам знадобиться функція з попереднього
+                завдання). ПОвинна бути виведена інформація: курс, ім'я, середня оцінка.
+            </p>
+            <div class="form-group">
+                <label for="sel1">Select student:</label>
+                <select class="form-control" id="sel1">
+                    <option value="" selected>Select...</option>
+                    <option value="0">Tanya</option>
+                    <option value="1">Victor</option>
+                    <option value="2">Anton</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="tabcontent">
+            <p>Створіть функцію getStudentsNames(students) --> ["Anton", "Tanya, "Victor"] – яка повертає імена
+                студентів у алфавітному порядку.
+            </p>
+            <div class="form-group">
+                <label for="sel1">Select student:</label>
+                <select class="form-control" id="sel1">
+                    <option value="" selected>Select...</option>
+                    <option value="students">All students</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="tabcontent">
+            <p>Створіть функцію getBestStudent(students) --> "Anton" – яка повертає кращого студента зі списку по
+                показнику середньої оцінки.
+            </p>
+            <div class="form-group">
+                <label for="sel1">Select student:</label>
+                <select class="form-control" id="sel1">
+                    <option value="" selected>Select...</option>
+                    <option value="students">All students</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="tabcontent">
+            <p>Створіть функцію calculateWordLetters("тест") --> { "т": 2, "е": 1, "с": 1 } – яка повертає обє'кт, в
+                якому ключі це букви у слові, а значення – кількість їх повторень.
+            </p>
+            <div class="form-group">
+                <label for="sel1">Enter a word:</label>
+                <input class="form-control" id="sel1"></input>
+            </div>
+        </div>
+        <div class="result"></div>
+
+
+    </div>
+    <img src="../img/logo.webp" alt="logo">
+
     <script src="./homework-06.js"></script>
-    
+
 </body>
 
 </html>
