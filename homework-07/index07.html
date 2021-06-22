@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 7</title>
+    <link rel="stylesheet" href="./style07.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="tab">
+            <button class="tablinks">getMyTaxes(salary)</button>
+            <button class="tablinks">getMiddleTaxes()</button>
+            <button class="tablinks">getTotalTaxes()</button>
+            <button class="tablinks">getMySalary()</button>
+        </div>
+
+        <div class="tabcontent">
+            <p>Створіть функцію getMyTaxes.call(country, salary) -> number; – яка рахує скільки податків ви заплатите як IT-спеціаліст в якійсь з країн.
+            </p>
+            <div class="form-group">
+                <label for="sel1">Select country:</label>
+                <select id='form-control' class="form-control" id="sel1">
+                    <option value="" selected>Select...</option>
+                    <option value="ukraine">Ukraine</option>
+                    <option value="latvia">Latvia</option>
+                    <option value="litva">Litva</option>
+                </select>
+                <input class="salary" type="number" value="0" autocomplete="off">
+                <button class="count" type="submit">Count</button>
+            </div>
+        </div>
+
+        <div class="tabcontent">
+            <p>Створіть функцію getMiddleTaxes.call(country) -> number; – яка рахує скільки у середньому податків платятт IT-спеціалісти у кожній країні. (tax * middleSalary).
+            </p>
+            <div class="form-group">
+                <label for="sel1">Select country:</label>
+                <select class="form-control" id="sel1">
+                    <option value="" selected>Select...</option>
+                    <option value="ukraine">Ukraine</option>
+                    <option value="latvia">Latvia</option>
+                    <option value="litva">Litva</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="tabcontent">
+            <p>Створіть функцію getTotalTaxes.call(country) -> number; – яка рахує, скільки всього податків платять IT-спеціалісти у кожній країні. (tax * middleSalary * vacancies).
+            </p>
+            <div class="form-group">
+                <label for="sel1">Select country:</label>
+                <select class="form-control" id="sel1">
+                    <option value="" selected>Select...</option>
+                    <option value="ukraine">Ukraine</option>
+                    <option value="latvia">Latvia</option>
+                    <option value="litva">Litva</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="tabcontent">
+            <p>Створіть функцію getMySalary(country) – яка буде писати в консоль об'єкт виду: { salary: number, taxes: number, profit: number } кожні 10 секунд. Значення salary – генеруйте випадковим чином у діапазоні 1500-2000. taxes – розраховується в залежності від вибраної країни та значення salary.
+                profit = salary - taxes;
+            </p>
+            <div class="form-group">
+                <label for="sel1">Select country:</label>
+                <select class="form-control" id="sel1">
+                    <option value="" selected>Select...</option>
+                    <option value="ukraine">Ukraine</option>
+                    <option value="latvia">Latvia</option>
+                    <option value="litva">Litva</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="result"></div>
+
+
+    </div>
+    <img src="../img/logo.webp" alt="logo">
+
+    <script src="./homework-07.js"></script>
+
+</body>
+
+</html>
