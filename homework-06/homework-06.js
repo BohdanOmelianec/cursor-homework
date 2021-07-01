@@ -26,64 +26,41 @@ const students = [{
 
 // Function 1
 function getSubjects(student) {
-
-    if (student === undefined) {
-
-        return 'No matches';
-    }
-
-    if ('subjects' in student) {
-        const studentSubjects = Object.keys(student.subjects);
-        const modifiedSubjects = [];
-
-        studentSubjects.forEach((subject) => {
-            modifiedSubjects.push(setFirstLetterUpper(subject));
-        });
-
-        return modifiedSubjects;
-    } else {
-
-        return 'No matches';
-    }
+    
+    return Object.keys(student?.subjects ?? {}).map( item => setFirstLetterUpper(item) );
 }
-console.log('Список всіх предметів: ', getSubjects(students[0]));
+console.log('Список всіх предметів: ', getSubjects(students[1]));
 
 
 // Function 2
 function getAverageMark({subjects}) {
     const marks = [];
 
-    for (let key in subjects) {
-        marks.push(...subjects[key]);
-    }
+    Object.values(subjects).forEach((marksArray) => {
+        marks.push(...marksArray); 
+    });
 
     return getAverage(...marks).toFixed(2);
 }
 
-console.log('Середня оцінка студента: ', getAverageMark(students[0]));
+console.log('Середня оцінка студента: ', getAverageMark(students[1]));
 
 
 // Function 3
 function getStudentInfo(student) {
-    const studentInfo = {...student};
-
-    delete studentInfo.subjects;
-    studentInfo.averageMark = +getAverageMark(student);
-
-    return studentInfo;
+    return {
+        name: student.name,
+        course: student.course,
+        averageMark: +getAverageMark(student)
+    };
 }
 console.log('Інформація про студента: ', getStudentInfo(students[0]));
 
 
 // Function 4
 function getStudentsNames(students) {
-    const studentNames = [];
 
-    students.forEach(obj => {
-        studentNames.push(obj.name);
-    });
-
-    return studentNames.sort();
+    return students.map(obj => obj.name).sort();
 }
 console.log('Список всіх студентів: ', getStudentsNames(students));
 
@@ -92,11 +69,11 @@ console.log('Список всіх студентів: ', getStudentsNames(stude
 function getBestStudent(students) {
     let bestStudent = '';
     let bigestMark = 0;
+    const getAM = getAverageMark;
 
     students.forEach(obj => {
-        
-        if (getAverageMark(obj) > bigestMark) {
-            bigestMark = getAverageMark(obj);
+        if (getAM(obj) > bigestMark) {
+            bigestMark = getAM(obj);
             bestStudent = obj.name;
         }
     });
@@ -228,3 +205,5 @@ selectElement[4].addEventListener('change', (event) => {
 selectElement[5].addEventListener('input', (event) => {
     result.textContent = JSON.stringify(calculateWordLetters(event.target.value));
 });
+
+
