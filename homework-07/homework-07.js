@@ -22,6 +22,7 @@ const litva = {
 
 function getMyTaxes(salary) {
     const result = salary * this.tax;
+
     return `You will pay ${result.toFixed(2)}$ of tax in ${this.country}`;
 }
 console.log(getMyTaxes.call(litva, 10000));
@@ -30,6 +31,7 @@ console.log(getMyTaxes.call(litva, 10000));
 
 function getMiddleTaxes() {
     const result = this.middleSalary * this.tax;
+
     return `The middle tax in ${this.country} is: ${result}$`;
 }
 
@@ -39,6 +41,7 @@ console.log(getMiddleTaxes.call(ukraine));
 
 function getTotalTaxes() {
     const result = this.middleSalary * this.tax * this.vacancies;
+
     return `Summ of tax is: ${result}$`;
 }
 
@@ -49,12 +52,13 @@ console.log(getTotalTaxes.call(litva));
 function getMySalary() {
     const salary = +(Math.random() * (2000 - 1500) + 1500).toFixed(2);
     const tax = this.tax;
-    const profit = +(salary - salary * this.tax).toFixed(2);
+    const profit = +(salary - salary * tax).toFixed(2);
     const obj = {
         salary: salary,
         tax: tax,
         profit: profit,
     };
+
     return `In ${this.country} ${ JSON.stringify(obj) }`;
 }
 
