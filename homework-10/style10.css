@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 20px;
+  background: url(./back.jpeg) no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+
+}
+
+section {
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.key {
+  max-width: 120px;
+  width: 100%;
+  border: 4px solid black;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px;
+  margin: 1.5% 1.5%;
+  background: rgba(32, 54, 28, 0.7);
+  transition: all .3s;
+  cursor: pointer;
+}
+
+kbd {
+  display: block;
+  font-size: 36px;
+  color: white;
+}
+
+span {
+  text-transform: uppercase;
+  font-size: .8em;
+  color: #14db57;
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: #19ff04;
+  box-shadow: 0 0 1rem #19ff04;
+}
+
+@media(max-width: 600px) {
+  section {
+    flex-direction: column;
+  }
+}
