@@ -6,7 +6,7 @@ document.addEventListener('keydown', (e) => {
     removeClassPlaying();
 
     keys.forEach((key) => {
-        if(key.classList.contains(e.code)) {
+        if (key.classList.contains(e.code) || e.target == 'span' || e.target == 'kbd') {
             key.classList.add('playing');
             playAudio(e.code);
         }
@@ -14,22 +14,37 @@ document.addEventListener('keydown', (e) => {
 
 });
 
+document.addEventListener('keydown', function (e) {
+    const audio = document.querySelector(`audio[data-key='${e.keyCode}']`);
+    const key = document.querySelector(`div[data-key='${e.keyCode}']`);
+
+    removeClassPlaying();
+    key.classList.add('playing');
+    playAudio(audio);
+
+});
+
 keys.forEach((key) => {
-    key.addEventListener('click', () => {
+    key.addEventListener('mouseover', (e) => {
+        const audio = document.querySelector(`audio[data-key='${e.target.dataset.key}']`);
+
         removeClassPlaying();
         key.classList.add('playing');
-        playAudio(key.classList.item(1));
+        playAudio(audio);
     });
 });
 
 
-function playAudio(id) {
-    document.querySelectorAll('audios').forEach(audio => {
+function playAudio(audio) {
+    document.querySelectorAll('audio').forEach(audio => {
         audio.pause();
     });
-    const audio = document.querySelector(`#${id}`);
-        audio.load();
-        audio.play();
+    if (!audio) {
+        return;
+    }
+    
+    audio.load();
+    audio.play();
 }
 
 function removeClassPlaying() {
