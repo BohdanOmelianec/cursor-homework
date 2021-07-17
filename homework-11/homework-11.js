@@ -1,27 +1,24 @@
 async function getRandomChinese(length) {
-    let res = '';
+    let characters = '';
 
     for (let i = 0; i < length; i++) {
-        const myPromise = new Promise((resolve) => {
+        const myPromise = new Promise(resolve => {
+            const sign = Date.now().toString().slice(-5);
+            const str = String.fromCharCode(sign);
             setTimeout(() => {
-                const sign = Date.now().toString().slice(-5);
-                const str = String.fromCharCode(sign);
                 resolve(str);
-            }, 500);
+            }, 50);
         });
 
-        res += await myPromise;
+        characters += await myPromise;
     }
 
-    return res;
+    return characters;
 }
 
 const quantity = document.querySelector('.quantity'),
       result = document.querySelector('.result');
 
 quantity.addEventListener('change', (e) => {
-    getRandomChinese(e.target.value)
-        .then((res) => {
-            result.value = res;
-        });
+    getRandomChinese(e.target.value).then(res => result.value = res);
 });
