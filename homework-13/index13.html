@@ -1,6 +1,5 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,39 +11,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+    
     <header class="header">
         <img class="logo" src="./img/Star-Wars-Logo.png" alt="logo">
 
     </header>
     <nav class="nav">
-        <a href="#" data-key="films" class="nav_link">Films</a>
-        <a href="#" data-key="people" class="nav_link">People</a>
-        <a href="#" data-key="planets" class="nav_link">Planets</a>
-        <a href="#" data-key="species" class="nav_link">Species</a>
-        <a href="#" data-key="starships" class="nav_link">Starships</a>
-        <a href="#" data-key="vehicles" class="nav_link">Vehicles</a>
+        <div class="get_characters">
+            <button class="btn" id="getInfo">Get characters</button>
+            <select type="number">
+                <option value="1">A New Hope</option>
+                <option value="2">The Empire Strikes Back</option>
+                <option value="3">Return of the Jedi</option>
+                <option value="4">The Phantom Menace</option>
+                <option value="5">Attack of the Clones</option>
+                <option value="6">Revenge of the Sith</option>
+            </select>
+        </div>
+        <button class="btn planets">Planets</button>
     </nav>
     <section class="section">
         <div class="container">
-            <div class="get_characters">
-                <button id="getInfo">Get characters</button>
-                <select type="number">
-                    <option value="1">A New Hope</option>
-                    <option value="2">The Empire Strikes Back</option>
-                    <option value="3">Return of the Jedi</option>
-                    <option value="4">The Phantom Menace</option>
-                    <option value="5">Attack of the Clones</option>
-                    <option value="6">Revenge of the Sith</option>
-                </select>
-            </div>
             <div class="load">
                 <p>Loading...</p>
             </div>
 
-            <button class="previous">&#10148</button>
-            <button class="next">&#10148</button>
+            <button data-url="" class="previous">&#10148</button>
+            <button data-url="" class="next">&#10148</button>
 
             <div id="root"></div>
 
@@ -54,7 +48,6 @@
 
 
     <script src="./homework-13.js"></script>
-
 </body>
-
 </html>
+
