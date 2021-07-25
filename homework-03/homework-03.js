@@ -6,7 +6,7 @@ function getMaxDigit(num) {
 console.log('getMaxDigit() - ', getMaxDigit('5459254'));
 
 // Function 2
-function numberInPower(num, pow) {
+export function numberInPower(num, pow) {
     // [num, pow] = [ Math.floor(num), Math.abs(Math.floor(pow) ) ];
     // return pow === 1 ? num : num * numberInPower(num, pow - 1);
     let summ = 1;

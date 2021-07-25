@@ -22,7 +22,7 @@ body {
     grid-column-start: 1;
     grid-column-end: 4;
     position: relative;
-    background: url(./img/logo.webp) no-repeat 4%/5%;
+    background: url(../src/logo.png) no-repeat 4%/5%;
     background-size: auto 80%;
 }
 
@@ -59,8 +59,12 @@ body {
 .anim:nth-child(8) {animation-delay: .6s;}
 .anim:nth-child(9) {animation-delay: .6s;}
 .anim:nth-child(10) {animation-delay: .6s;}
-
-
+.anim:nth-child(11) {animation-delay: .8s;}
+.anim:nth-child(12) {animation-delay: .8s;}
+.anim:nth-child(13) {animation-delay: .8s;}
+.anim:nth-child(14) {animation-delay: 1s;}
+.anim:nth-child(15) {animation-delay: 1s;}
+.anim:nth-child(16) {animation-delay: 1s;}
 
 /* Animation */
 @keyframes appear {

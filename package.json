@@ -1,0 +1,29 @@
+{
+  "name": "cursor-homework",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "test",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BohdanOmelianec/cursor-homework.git"
+  },
+  "author": "'Bohdan Omelianets'",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BohdanOmelianec/cursor-homework/issues"
+  },
+  "homepage": "https://github.com/BohdanOmelianec/cursor-homework#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.46.0",
+    "webpack-cli": "^4.7.2"
+  }
+}
