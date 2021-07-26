@@ -2,12 +2,17 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: ['babel-polyfill', './src/index.js'],
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+  entry: {
+    polyfill: 'babel-polyfill',
+    main: './src/index.js',
+    hw16: './homework-16/index.js',
+    
   },
-  // watch: true,
+  output: {
+    filename: '[name].bundle.js',
+  //   // path: path.resolve(__dirname, 'dist'),
+  },
+  watch: true,
   
   module: {
     rules: [
